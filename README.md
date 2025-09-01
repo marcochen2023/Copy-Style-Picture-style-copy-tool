@@ -24,24 +24,25 @@ A powerful Chrome extension that combines Gemini AI image analysis with Qwen Ima
 ### Method 1: Developer Mode Installation (Recommended)
 
 1. **Download Project**
-   ```bash
+
    # Method 1: Download ZIP file
    # Go to GitHub repository page and click "Code" → "Download ZIP"
    # Extract the ZIP file to your desired location
    
    # Method 2: If you have access to the repository
+   ```bash
    git clone https://github.com/marcochen2023/Copy-Style-Picture-style-copy-tool
    cd Copy-Style-Picture-style-copy-tool
    ```
 
-2. **Open Chrome Extensions Management Page**
+3. **Open Chrome Extensions Management Page**
    - Enter in Chrome address bar: `chrome://extensions/`
    - Or: Menu → More Tools → Extensions
 
-3. **Enable Developer Mode**
+4. **Enable Developer Mode**
    - Click the "Developer mode" toggle in the top right corner
 
-4. **Load Extension**
+5. **Load Extension**
    - Click "Load unpacked"
    - Select the downloaded project folder
    - Confirm successful loading
