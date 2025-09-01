@@ -24,12 +24,12 @@
 ### 方法一：開發者模式安裝（推薦）
 
 1. **下載專案**
+   ```bash
    # 方法一：下載ZIP檔案
    # 前往GitHub專案頁面，點擊「Code」→「Download ZIP」
    # 將ZIP檔案解壓縮到您想要的位置
    
    # 方法二：如果您有專案存取權限
-   ```bash
    git clone https://github.com/marcochen2023/Copy-Style-Picture-style-copy-tool
    cd Copy-Style-Picture-style-copy-tool
    ```

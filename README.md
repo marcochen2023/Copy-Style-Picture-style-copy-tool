@@ -1,13 +1,12 @@
-# Copy Style Picture style copy tool - Chrome Extension
-[英文](README.md)  |  [繁體中文](README.zh-tw.md)
+# Copy Style - Chrome Extension
 
-A powerful Chrome extension that combines Gemini AI image analysis with Qwen Image generation, allowing you to easily copy the style of any image and generate new images.
+A powerful Chrome extension that combines Gemini AI image analysis with RUNPOD API image generation, allowing you to easily copy the style of any image and generate new images.
 
 ## 🌟 Features
 
-- **AI Image Analysis**: Uses Google Gemini to analyze image content and style
+- **AI Image Analysis**: Uses Google Gemini 2.0 Flash Lite to analyze image content and style
 - **Automatic Prompt Generation**: Converts images into detailed text descriptions
-- **AI Image Generation**: Generates new images with similar styles through RUNPOD Qwen Image API
+- **AI Image Generation**: Generates new images with similar styles through RUNPOD API
 - **LoRA Model Support**: Supports up to 4 LoRA models for style fine-tuning
 - **Auto Download**: Generated images are automatically downloaded locally
 - **Real-time Notifications**: Detailed progress updates and status notifications
@@ -24,25 +23,24 @@ A powerful Chrome extension that combines Gemini AI image analysis with Qwen Ima
 ### Method 1: Developer Mode Installation (Recommended)
 
 1. **Download Project**
-
+   ```bash
    # Method 1: Download ZIP file
    # Go to GitHub repository page and click "Code" → "Download ZIP"
    # Extract the ZIP file to your desired location
    
    # Method 2: If you have access to the repository
-   ```bash
    git clone https://github.com/marcochen2023/Copy-Style-Picture-style-copy-tool
    cd Copy-Style-Picture-style-copy-tool
    ```
 
-3. **Open Chrome Extensions Management Page**
+2. **Open Chrome Extensions Management Page**
    - Enter in Chrome address bar: `chrome://extensions/`
    - Or: Menu → More Tools → Extensions
 
-4. **Enable Developer Mode**
+3. **Enable Developer Mode**
    - Click the "Developer mode" toggle in the top right corner
 
-5. **Load Extension**
+4. **Load Extension**
    - Click "Load unpacked"
    - Select the downloaded project folder
    - Confirm successful loading

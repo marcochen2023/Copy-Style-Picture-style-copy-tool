@@ -116,7 +116,7 @@ function addLoraItem(path = '', scale = 1.0) {
     const loraDiv = document.createElement('div');
     loraDiv.className = 'lora-item';
     loraDiv.innerHTML = `
-        <button type="button" class="remove-lora" onclick="removeLoraItem(this)" title="刪除此 LoRA">🗑️</button>
+        <button type="button" class="remove-lora" title="刪除此 LoRA">🗑️</button>
         <div class="lora-fields">
             <div>
                 <label>LoRA 模組路徑:</label>
@@ -128,6 +128,12 @@ function addLoraItem(path = '', scale = 1.0) {
             </div>
         </div>
     `;
+    
+    // 為刪除按鈕添加事件監聽器
+    const removeButton = loraDiv.querySelector('.remove-lora');
+    removeButton.addEventListener('click', function() {
+        removeLoraItem(this);
+    });
     
     container.appendChild(loraDiv);
     
@@ -176,5 +182,4 @@ function showStatus(message, type = 'success') {
     }, 3000);
 }
 
-// 將 removeLoraItem 函數設為全域，以便 HTML 中的 onclick 可以使用
-window.removeLoraItem = removeLoraItem;
+// removeLoraItem 函數現在通過 addEventListener 調用，不需要設為全域
