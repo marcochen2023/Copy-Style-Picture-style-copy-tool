@@ -25,8 +25,13 @@
 
 1. **下載專案**
    ```bash
-   git clone https://github.com/marcochen2023/copy-style-extension.git
-   cd copy-style-extension
+   # 方法一：下載ZIP檔案
+   # 前往GitHub專案頁面，點擊「Code」→「Download ZIP」
+   # 將ZIP檔案解壓縮到您想要的位置
+   
+   # 方法二：如果您有專案存取權限
+   git clone https://github.com/marcochen2023/Copy-Style-Picture-style-copy-tool
+   cd Copy-Style-Picture-style-copy-tool
    ```
 
 2. **開啟Chrome擴展管理頁面**
