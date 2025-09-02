@@ -216,6 +216,9 @@ Copy_Style/
 
 ⭐ 如果這個專案對您有幫助，請給我們一個星星！
 
+## 🙏 贊助打賞
+- Patreon: [贊助打賞](https://www.patreon.com/c/NovelPD)
+
 🧑‍💻 開發者 (Developers)
 Marco Chen (marcochen2023@gmail.com)
 Ethan Chen

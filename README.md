@@ -215,6 +215,9 @@ If you have questions or suggestions, please contact us through:
 
 ⭐ If this project helps you, please give us a star!
 
+## 🙏 Donate
+- Patreon: [Donate](https://www.patreon.com/c/NovelPD)
+
 🧑‍💻 Developers
 Marco Chen (marcochen2023@gmail.com)
 Ethan Chen
