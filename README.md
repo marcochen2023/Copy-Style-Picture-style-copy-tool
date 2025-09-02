@@ -77,7 +77,7 @@ A powerful Chrome extension that combines Gemini AI image analysis with RUNPOD A
    - Create new account and complete verification
 
 2. **Get API Key**
-   - After login, go to: https://www.runpod.io/console/user/settings
+   - After login, go to: https://www.runpod.io/console/user/settings?ref=le1d7tb4
    - In "API Keys" section, click "+ API Key"
    - Enter key name and create
    - Copy the generated API Key

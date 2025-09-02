@@ -77,7 +77,7 @@
    - 創建新帳號並完成驗證
 
 2. **獲取API Key**
-   - 登入後前往：https://www.runpod.io/console/user/settings
+   - 登入後前往：https://www.runpod.io/console/user/settings?ref=le1d7tb4
    - 在「API Keys」部分點擊「+ API Key」
    - 輸入Key名稱並創建
    - 複製生成的API Key

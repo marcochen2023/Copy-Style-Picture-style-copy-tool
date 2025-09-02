@@ -5,230 +5,663 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Copy Style Options</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        /* 基本樣式 */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px; 
-            background-color: #f5f5f5;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 標題區域樣式 */
+        .header {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 600px;
-            max-width: 90vw;
-        }
-        h1 { 
-            font-size: 1.5em; 
-            color: #333;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-        }
-        .section {
-            margin-bottom: 25px;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            background-color: #fafafa;
-        }
-        .section h2 {
-            font-size: 1.2em;
-            color: #555;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        label { 
-            display: block; 
-            margin-top: 10px;
-            font-weight: 500;
-            color: #333;
-        }
-        input, textarea, select { 
-            width: 100%; 
-            padding: 8px; 
-            margin-top: 5px; 
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        textarea {
-            height: 80px;
-            resize: vertical;
-        }
-        button { 
-            padding: 10px 20px; 
-            margin: 10px 5px 0 0; 
-            cursor: pointer;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .btn-primary {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: #45a049;
-        }
-        .btn-secondary {
-            background-color: #008CBA;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background-color: #007B9A;
-        }
-        .btn-danger {
-            background-color: #f44336;
-            color: white;
-        }
-        .btn-danger:hover {
-            background-color: #da190b;
-        }
-        #status { 
-            margin-top: 15px; 
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: none;
-        }
-        .status-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .status-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .lora-item {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            background-color: white;
+            align-items: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.05);
             position: relative;
         }
-        .lora-controls {
-            display: flex;
-            gap: 10px;
-            align-items: center;
+
+        /* Logo樣式 */
+        .logo {
+            width: 128px;
+            height: 128px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            margin: 0;
+            color: white;
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* 語言選擇器樣式 */
+        .language-selector {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .language-selector select {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 14px;
+            color: #4a5568;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+            min-width: 130px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .language-selector select:hover {
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.15);
+        }
+
+        .language-selector select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15), 0 4px 8px rgba(102, 126, 234, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* 區塊樣式 */
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* 表單樣式 */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* 按鈕樣式 */
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
             margin-bottom: 10px;
         }
-        .lora-fields {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            gap: 10px;
-        }
-        .remove-lora {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: none;
-            border: none;
+
+        .save-btn {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 15px 30px;
             font-size: 16px;
-            cursor: pointer;
-            color: #f44336;
-            width: 24px;
-            height: 24px;
+            border-radius: 10px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(17, 153, 142, 0.3);
+        }
+
+        /* API Key 按鈕樣式 */
+        .api-key-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .api-key-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* 連結按鈕區域樣式 */
+        .link-buttons {
             display: flex;
-            align-items: center;
+            gap: 15px;
             justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.2s;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .remove-lora:hover {
-            background-color: #ffebee;
+
+        /* 基本連結按鈕樣式 */
+        .link-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 120px;
         }
-        .add-lora {
-            margin-top: 10px;
+
+        /* 贊助打賞按鈕 */
+        .sponsor-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
         }
-        .btn-disabled {
-            background-color: #cccccc !important;
-            color: #666666 !important;
-            cursor: not-allowed !important;
+
+        .sponsor-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            color: white;
         }
-        .btn-disabled:hover {
-            background-color: #cccccc !important;
+
+        /* 一鍵換臉按鈕 */
+        .clone-btn {
+            background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(72, 52, 212, 0.2);
         }
+
+        .clone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 52, 212, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* AI小說生成按鈕 */
+        .novel-btn {
+            background: linear-gradient(135deg, #a55eea 0%, #26de81 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(165, 94, 234, 0.2);
+        }
+
+        .novel-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(165, 94, 234, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* 品質選項樣式 */
         .quality-options {
-            display: flex;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
             margin-top: 10px;
         }
+
         .quality-options label {
             display: flex;
             align-items: center;
-            margin-top: 0;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
         }
+
+        .quality-options label:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
         .quality-options input[type="radio"] {
             width: auto;
             margin-right: 8px;
-            margin-top: 0;
+        }
+
+        /* LoRA 相關樣式 */
+        .lora-item {
+            position: relative;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .remove-lora {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .remove-lora:hover {
+            background: #c82333;
+            transform: scale(1.1);
+        }
+
+        .lora-fields {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+        }
+
+        .add-lora-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .add-lora-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .add-lora-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* 狀態訊息樣式 */
+        .status {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* 使用說明樣式 */
+        .usage-guide {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .usage-guide ol {
+            padding-left: 20px;
+        }
+
+        .usage-guide li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .usage-guide p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* YouTube 影片樣式 */
+        .video-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .video-title {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        /* 響應式設計 - 手機版面 */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                position: static;
+                transform: none;
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+                align-self: center;
+            }
+            
+            .logo:hover {
+                transform: scale(1.05);
+            }
+            
+            .header h1 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            
+            .language-selector {
+                position: static;
+                transform: none;
+                margin: 0 auto;
+            }
+            
+            .language-selector select {
+                min-width: 120px;
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .video-section {
+                padding: 20px 15px;
+            }
+
+            .video-title {
+                font-size: 1.2em;
+            }
+            
+            .lora-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .link-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .link-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px 10px;
+            }
+            
+            .logo {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 10px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .language-selector select {
+                min-width: 100px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .quality-options {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="icons/logo.png" alt="Copy Style Logo" class="logo">
+        <h1 data-i18n="title">Copy Style 設定</h1>
+        <div class="language-selector">
+            <select id="languageSelect">
+                <option value="zh-tw">繁體中文</option>
+                <option value="zh-cn">简体中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+            </select>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>Copy Style 設定</h1>
-        
+        <div class="section video-section">
+            <h2 class="video-title" data-i18n="tutorial_video_title">教學影片</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/8M68FaiZ3I4" 
+                        title="Copy Style 圖片風格克隆神器教學影片" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
         <div class="section">
-            <h2>API 金鑰設定</h2>
-            <label for="geminiApiKey">Gemini API Key:</label>
-            <input type="password" id="geminiApiKey" placeholder="請輸入您的 Gemini API Key">
+            <h2 data-i18n="api_keys_title">API 金鑰設定</h2>
+            <div class="form-group">
+                <label for="geminiApiKey" data-i18n="gemini_api_key">Gemini API Key:</label>
+                <input type="password" id="geminiApiKey" data-i18n-placeholder="gemini_placeholder" placeholder="請輸入您的 Gemini API Key">
+            </div>
             
-            <label for="runpodApiKey">RUNPOD API Key:</label>
-            <input type="password" id="runpodApiKey" placeholder="請輸入您的 RUNPOD API Key">
-        </div>
-
-        <div class="section">
-            <h2>提示詞設定</h2>
-            <label for="promptPrefix">正向提示詞前綴:</label>
-            <textarea id="promptPrefix" placeholder="輸入要添加到 LLM 回傳提示詞前面的前綴內容（可選）"></textarea>
-        </div>
-
-        <div class="section">
-            <h2>圖片設定</h2>
-            <label>圖片解析度:</label>
-            <div class="quality-options">
-                <label>
-                    <input type="radio" name="imageSize" value="600*800" checked>
-                    普通品質 (600×800)
-                </label>
-                <label>
-                    <input type="radio" name="imageSize" value="1024*1024">
-                    標準品質 (1024×1024)
-                </label>
-                <label>
-                    <input type="radio" name="imageSize" value="1024*1368">
-                    高品質 (1024×1368)
-                </label>
-                <label>
-                    <input type="radio" name="imageSize" value="1024*1536">
-                    高品質 (1024×1536)
-                </label>
+            <div class="form-group">
+                <label for="runpodApiKey" data-i18n="runpod_api_key">RUNPOD API Key:</label>
+                <input type="password" id="runpodApiKey" data-i18n-placeholder="runpod_placeholder" placeholder="請輸入您的 RUNPOD API Key">
+                <a href="https://www.runpod.io/console/user/settings?ref=le1d7tb4" target="_blank" class="api-key-btn" data-i18n="get_runpod_key">取得 RunPod API Key</a>
             </div>
         </div>
 
         <div class="section">
-            <h2>LoRA 模組設定</h2>
-            <p>最多可添加 4 個 LoRA 模組</p>
-            <div id="loraContainer">
-                <!-- LoRA items will be dynamically added here -->
+            <h2 data-i18n="prompt_settings_title">提示詞設定</h2>
+            <div class="form-group">
+                <label for="promptPrefix" data-i18n="prompt_prefix">正向提示詞前綴:</label>
+                <textarea id="promptPrefix" data-i18n-placeholder="prompt_prefix_placeholder" placeholder="輸入要添加到 LLM 回傳提示詞前面的前綴內容（可選）"></textarea>
             </div>
-            <button type="button" id="addLora" class="btn-secondary add-lora">+ 添加 LoRA</button>
         </div>
 
-        <button id="save" class="btn-primary">儲存設定</button>
-        <div id="status"></div>
+        <div class="section">
+            <h2 data-i18n="image_settings_title">圖片設定</h2>
+            <div class="form-group">
+                <label data-i18n="image_resolution">圖片解析度:</label>
+                <div class="quality-options">
+                    <label>
+                        <input type="radio" name="imageSize" value="600*800" checked>
+                        <span data-i18n="quality_normal">普通品質 (600×800)</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="imageSize" value="1024*1024">
+                        <span data-i18n="quality_standard">標準品質 (1024×1024)</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="imageSize" value="1024*1368">
+                        <span data-i18n="quality_high">高品質 (1024×1368)</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="imageSize" value="1024*1536">
+                        <span data-i18n="quality_ultra">高品質 (1024×1536)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 data-i18n="lora_settings_title">LoRA 模組設定</h2>
+            <div id="loraContainer"></div>
+            <button type="button" id="addLora" class="add-lora-btn" data-i18n="add_lora">+ 添加 LoRA (0/4)</button>
+        </div>
+
+        <div class="section">
+            <button type="button" id="save" class="save-btn" data-i18n="save_settings">儲存設定</button>
+            <div id="status" class="status"></div>
+        </div>
+
+        <div class="section">
+            <h2 data-i18n="usage_guide_title">使用說明</h2>
+            <div class="usage-guide">
+                <ol data-i18n="usage_steps">
+                    <li>首先在上方設定您的 Gemini API Key 和 RUNPOD API Key</li>
+                    <li>可選擇性設定提示詞前綴，讓生成的圖片更符合您的需求</li>
+                    <li>選擇適合的圖片解析度（解析度越高，生成時間越長）</li>
+                    <li>可添加最多4個 LoRA 模組來微調圖片風格</li>
+                    <li>在任何網頁上右鍵點擊圖片，選擇「Copy Style」開始分析</li>
+                    <li>等待 AI 分析完成後，會自動生成相似風格的新圖片</li>
+                    <li>生成的圖片會自動下載到您的下載資料夾</li>
+                </ol>
+            </div>
+            
+            <div class="link-buttons">
+                <a href="https://www.patreon.com/c/NovelPD" target="_blank" class="link-btn sponsor-btn" data-i18n="sponsor_btn">贊助打賞</a>
+                <a href="https://github.com/marcochen2023/face-swap-extension" target="_blank" class="link-btn clone-btn" data-i18n="face_swap_btn">一鍵換臉</a>
+                <a href="https://novelpd.online" target="_blank" class="link-btn novel-btn" data-i18n="ai_novel_btn">AI小說生成</a>
+            </div>
+        </div>
     </div>
 
     <script src="options.js"></script>
