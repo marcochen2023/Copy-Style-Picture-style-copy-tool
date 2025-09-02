@@ -1,4 +1,5 @@
 # Copy Style - Chrome Extension
+[英文](README.md)  |  [繁體中文](README.zh-tw.md)
 
 A powerful Chrome extension that combines Gemini AI image analysis with RUNPOD API image generation, allowing you to easily copy the style of any image and generate new images.
 
