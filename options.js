@@ -1,6 +1,6 @@
 // LoRA 管理相關變數
 let loraCount = 0;
-const maxLoras = 4;
+const maxLoras = 3;
 
 // 多語言字典
 const translations = {
@@ -29,6 +29,7 @@ const translations = {
         sponsor_btn: '贊助打賞',
         face_swap_btn: '一鍵換臉',
         ai_novel_btn: 'AI小說生成',
+        OC_sticker: '一鍵生成超美貼圖',
         save_success: '設定已成功儲存！',
         save_error: '儲存失敗',
         api_key_required: '請填入所有必要的 API Key',
@@ -64,6 +65,7 @@ const translations = {
         sponsor_btn: '赞助打赏',
         face_swap_btn: '一键换脸',
         ai_novel_btn: 'AI小说生成',
+        OC_sticker: '一键生成超美贴图',
         save_success: '设置已成功保存！',
         save_error: '保存失败',
         api_key_required: '请填入所有必要的 API Key',
@@ -98,7 +100,8 @@ const translations = {
         usage_guide_title: 'Usage Guide',
         sponsor_btn: 'Sponsor',
         face_swap_btn: 'Face Swap',
-        ai_novel_btn: 'AI Novel',
+        ai_novel_btn: 'AI Novel generation',
+        OC_sticker: 'One Click Sticker',
         save_success: 'Settings saved successfully!',
         save_error: 'Save failed',
         api_key_required: 'Please fill in all required API Keys',
@@ -133,7 +136,8 @@ const translations = {
         usage_guide_title: '使用方法',
         sponsor_btn: 'スポンサー',
         face_swap_btn: '顔交換',
-        ai_novel_btn: 'AI小説',
+        ai_novel_btn: 'AI小説生成',
+        OC_sticker: 'ワンクリックステッカー',
         save_success: '設定が正常に保存されました！',
         save_error: '保存に失敗しました',
         api_key_required: '必要なAPIキーをすべて入力してください',
@@ -169,6 +173,7 @@ const translations = {
         sponsor_btn: '후원',
         face_swap_btn: '얼굴 교체',
         ai_novel_btn: 'AI 소설',
+        OC_sticker: '원클릭 스티커',
         save_success: '설정이 성공적으로 저장되었습니다!',
         save_error: '저장 실패',
         api_key_required: '모든 필수 API Key를 입력해주세요',
